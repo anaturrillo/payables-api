@@ -9,6 +9,7 @@ function toRow(row: Record<string, unknown>): Product {
     name:        row.name as string,
     aliases:     JSON.parse(row.aliases as string),
     description: row.description as string,
+    category:    (row.category ?? "other") as Product["category"],
     status:      row.status as Product["status"],
     createdAt:   row.created_at as string,
   };
@@ -34,8 +35,8 @@ export class ProductsRepository {
     const id = randomUUID();
     const createdAt = new Date().toISOString();
     db.prepare(
-      "INSERT INTO products (id, name, aliases, description, status, created_at) VALUES (?, ?, ?, ?, ?, ?)"
-    ).run(id, dto.name, JSON.stringify(dto.aliases), dto.description, dto.status, createdAt);
+      "INSERT INTO products (id, name, aliases, description, category, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)"
+    ).run(id, dto.name, JSON.stringify(dto.aliases), dto.description, dto.category ?? "other", dto.status, createdAt);
     return this.findById(id)!;
   }
 

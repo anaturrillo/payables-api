@@ -16,13 +16,7 @@ export class ApproversController {
     if (!body.name || !body.email || !body.password || !body.status) {
       throw new BadRequestException("name, email, password and status are required");
     }
-    return this.service.create({
-      name: body.name,
-      email: body.email,
-      password: body.password,
-      approvalLimit: body.approvalLimit ?? null,
-      status: body.status,
-    });
+    return this.service.create({ name: body.name, email: body.email, password: body.password, status: body.status });
   }
 
   @Put(":id")

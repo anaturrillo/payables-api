@@ -20,6 +20,7 @@ export class ProductsController {
       name: body.name,
       aliases: body.aliases ?? [],
       description: body.description ?? "",
+      category: body.category ?? "other",
       status: body.status,
     });
   }
