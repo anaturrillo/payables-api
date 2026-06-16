@@ -1,0 +1,19 @@
+TECHNICAL_DECISIONS.md
+  s_df00bc047c6515::t_4fc8ff528b873d 68-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "63675badd78c8fa37f2446f3a59da12bc8de2e70",
+  "prompts": {},
+  "sessions": {
+    "s_df00bc047c6515": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8e7f811-45a3-4eb1-a176-4822521a15e4",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  }
+}
