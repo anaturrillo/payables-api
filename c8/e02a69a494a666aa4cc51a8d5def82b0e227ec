@@ -1,0 +1,25 @@
+TECHNICAL_DECISIONS.md
+  s_df00bc047c6515::t_ea3906e18560a0 1-59
+  s_df00bc047c6515::t_257ed8c23dd61b 60-67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "c8e02a69a494a666aa4cc51a8d5def82b0e227ec",
+  "prompts": {},
+  "humans": {
+    "h_7607292b2c601e": {
+      "author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  },
+  "sessions": {
+    "s_df00bc047c6515": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8e7f811-45a3-4eb1-a176-4822521a15e4",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  }
+}
