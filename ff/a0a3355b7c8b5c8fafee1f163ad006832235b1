@@ -1,0 +1,25 @@
+README.md
+  s_df00bc047c6515::t_8d861c7f501016 1-50,52-80
+  h_7607292b2c601e 51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "ffa0a3355b7c8b5c8fafee1f163ad006832235b1",
+  "prompts": {},
+  "humans": {
+    "h_7607292b2c601e": {
+      "author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  },
+  "sessions": {
+    "s_df00bc047c6515": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8e7f811-45a3-4eb1-a176-4822521a15e4",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  }
+}
