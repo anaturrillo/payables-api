@@ -1,0 +1,27 @@
+src/bills/cost-center-suggestion.service.ts
+  s_df00bc047c6515::t_8e96204a71aad7 115-117
+  s_df00bc047c6515::t_a94642cb86e73f 102,105
+  s_df00bc047c6515::t_5aab38790703d7 26
+  s_df00bc047c6515::t_ce8295e17818cb 48,55
+src/bills/bills.controller.ts
+  s_df00bc047c6515::t_e839d2bd7c27f8 105
+  s_df00bc047c6515::t_3fb5f2fd41d0f9 110-112
+src/bills/ocr.service.ts
+  s_df00bc047c6515::t_4ef0bc2d05bd24 60-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "33363d8e7f29031b3012aefa9edc477c3a9f3231",
+  "prompts": {},
+  "sessions": {
+    "s_df00bc047c6515": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8e7f811-45a3-4eb1-a176-4822521a15e4",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  }
+}
