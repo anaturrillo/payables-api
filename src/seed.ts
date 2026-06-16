@@ -1,3 +1,4 @@
+import "dotenv/config";
 import "reflect-metadata";
 import { CostCentersRepository } from "./cost-centers/cost-centers.repository";
 import { ApproversRepository } from "./approvers/approvers.repository";
@@ -35,59 +36,66 @@ async function seed() {
   rules.create(cc[0].id, {
     name: "Small purchases",
     flowType: "parallel",
-    conditionLogic: "and",
+    groupLogic: "and",
     requiredApprovals: 1,
-    conditions: [{ type: "amount", operator: "lt", value: "1000" }],
+    conditionGroups: [{ logic: "and", conditions: [{ type: "amount", operator: "lt", value: "1000" }] }],
     approvers: [{ approverId: ap[0].id, orderIndex: 0 }],
   });
   rules.create(cc[0].id, {
     name: "Large purchases",
     flowType: "sequential",
-    conditionLogic: "and",
+    groupLogic: "and",
     requiredApprovals: 2,
-    conditions: [{ type: "amount", operator: "gte", value: "1000" }],
+    conditionGroups: [{ logic: "and", conditions: [{ type: "amount", operator: "gte", value: "1000" }] }],
     approvers: [
       { approverId: ap[0].id, orderIndex: 0 },
       { approverId: ap[3].id, orderIndex: 1 },
     ],
   });
 
-  // Engineering rules
   rules.create(cc[1].id, {
-    name: "Software & tools",
+    name: "Software & infrastructure tools",
     flowType: "parallel",
-    conditionLogic: "and",
+    groupLogic: "and",
     requiredApprovals: 1,
-    conditions: [{ type: "product_category", operator: "eq", value: "software" }],
+    conditionGroups: [
+      {
+        logic: "or",
+        conditions: [
+          { type: "product_category", operator: "eq", value: "software" },
+          { type: "product_category", operator: "eq", value: "infrastructure" },
+        ],
+      },
+      { logic: "and", conditions: [{ type: "amount", operator: "gt", value: "500" }] },
+    ],
     approvers: [{ approverId: ap[1].id, orderIndex: 0 }],
   });
   rules.create(cc[1].id, {
     name: "High-value purchases",
     flowType: "sequential",
-    conditionLogic: "and",
+    groupLogic: "and",
     requiredApprovals: 2,
-    conditions: [{ type: "amount", operator: "gt", value: "10000" }],
+    conditionGroups: [{ logic: "and", conditions: [{ type: "amount", operator: "gt", value: "10000" }] }],
     approvers: [
       { approverId: ap[1].id, orderIndex: 0 },
       { approverId: ap[2].id, orderIndex: 1 },
     ],
   });
 
-  // Finance rules
   rules.create(cc[2].id, {
     name: "Standard approval",
     flowType: "parallel",
-    conditionLogic: "and",
+    groupLogic: "and",
     requiredApprovals: 1,
-    conditions: [{ type: "amount", operator: "lte", value: "50000" }],
+    conditionGroups: [{ logic: "and", conditions: [{ type: "amount", operator: "lte", value: "50000" }] }],
     approvers: [{ approverId: ap[2].id, orderIndex: 0 }],
   });
   rules.create(cc[2].id, {
     name: "Executive approval",
     flowType: "sequential",
-    conditionLogic: "and",
+    groupLogic: "and",
     requiredApprovals: 2,
-    conditions: [{ type: "amount", operator: "gt", value: "50000" }],
+    conditionGroups: [{ logic: "and", conditions: [{ type: "amount", operator: "gt", value: "50000" }] }],
     approvers: [
       { approverId: ap[2].id, orderIndex: 0 },
       { approverId: ap[1].id, orderIndex: 1 },

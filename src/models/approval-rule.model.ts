@@ -1,13 +1,22 @@
 export type FlowType = "parallel" | "sequential";
-export type ConditionType = "product_category" | "amount" | "product_count";
+export type ConditionType = "product_category" | "product" | "amount" | "product_count";
 export type ConditionOperator = "eq" | "neq" | "gt" | "gte" | "lt" | "lte";
+export type ConditionLogic = "and" | "or";
 
 export interface RuleCondition {
   id: string;
-  ruleId: string;
+  groupId: string;
   type: ConditionType;
   operator: ConditionOperator;
   value: string;
+}
+
+export interface ConditionGroup {
+  id: string;
+  ruleId: string;
+  logic: ConditionLogic;
+  orderIndex: number;
+  conditions: RuleCondition[];
 }
 
 export interface RuleApprover {
@@ -19,17 +28,15 @@ export interface RuleApprover {
   orderIndex: number;
 }
 
-export type ConditionLogic = "and" | "or";
-
 export interface ApprovalRule {
   id: string;
   costCenterId: string;
   name: string;
   flowType: FlowType;
-  conditionLogic: ConditionLogic;
+  groupLogic: ConditionLogic;
   requiredApprovals: number;
   position: number;
-  conditions: RuleCondition[];
+  conditionGroups: ConditionGroup[];
   approvers: RuleApprover[];
   createdAt: string;
 }
@@ -40,6 +47,11 @@ export interface ConditionDto {
   value: string;
 }
 
+export interface ConditionGroupDto {
+  logic: ConditionLogic;
+  conditions: ConditionDto[];
+}
+
 export interface RuleApproverDto {
   approverId: string;
   orderIndex: number;
@@ -48,8 +60,8 @@ export interface RuleApproverDto {
 export interface SaveApprovalRuleDto {
   name: string;
   flowType: FlowType;
-  conditionLogic: ConditionLogic;
+  groupLogic: ConditionLogic;
   requiredApprovals: number;
-  conditions: ConditionDto[];
+  conditionGroups: ConditionGroupDto[];
   approvers: RuleApproverDto[];
 }

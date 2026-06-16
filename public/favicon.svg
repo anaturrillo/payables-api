@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0f766e"/>
+  <!-- ReceiptLong icon, scaled from 24x24 to fit with 4px padding each side -->
+  <g transform="translate(4,4) scale(1)">
+    <path fill="white" d="
+      M19.5 3.5 L18 2 l-1.5 1.5 L15 2 l-1.5 1.5 L12 2 l-1.5 1.5 L9 2
+      L7.5 3.5 L6 2 v20 l1.5-1.5 L9 22 l1.5 1.5 L12 22 l1.5 1.5 L15 22
+      l1.5 1.5 L18 22 l1.5 1.5 L21 22 V2 z
+      M9 17h6v1.5H9z M9 13.5h6v1.5H9z M9 10h6v1.5H9z
+      M16 17h2v1.5h-2z M16 13.5h2v1.5h-2z M16 10h2v1.5h-2z
+    "/>
+  </g>
+</svg>
