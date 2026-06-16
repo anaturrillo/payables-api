@@ -1,0 +1,113 @@
+src/cost-centers/approval-rules.repository.ts
+  s_df00bc047c6515::t_f86bfa79b1f255 5,11,18-27,39-63,65,69,72-73,81-84,89,96-99,101-104,106-107,109-110,112-119,123-124,130-137,139-140,142-150,153,157-158,164-166
+public/index.html
+  s_df00bc047c6515::t_a73cf56cc399fa 1-7,9-13
+  s_df00bc047c6515::t_3954f91db869e5 8
+src/bills/cost-center-suggestion.service.ts
+  s_df00bc047c6515::t_04910c7fe408df 1-28,32-39,41-45,55-67,69-71,74,77-81,83-95,106-120
+  s_df00bc047c6515::t_4e57e43894208c 47,54,75-76
+  s_df00bc047c6515::t_d97c50f9245a2b 29-31,40,46,50
+  s_df00bc047c6515::t_9003343f13a1e8 48-49,51-53
+  s_df00bc047c6515::t_e8f66bdd833bb9 68,72-73,82
+  h_7607292b2c601e 96-105
+src/bills/bills.repository.ts
+  s_91f253da6c5713::t_e7e12c196c59b8 136-137,149-150
+  s_df00bc047c6515::t_b33af0fc10eccb 19-38,52-70,75,77,92,154-155,198-202
+  s_91f253da6c5713::t_bf34bb5bb6be04 39-51,71-72,74,78-91,94
+  s_91f253da6c5713::t_48c147a7e27eec 102-103,106,118-119,122
+  s_91f253da6c5713::t_37e4d9107810ad 4
+  s_91f253da6c5713::t_79f06371d5b065 176-186
+  s_df00bc047c6515::t_f63758d7c3fd88 1-3,5-18,73,76,93,95-101,104-105,107-117,120-121,123-135,138-148,151-153,156-175,187-197,203-222
+public/favicon.svg
+  s_df00bc047c6515::t_a73cf56cc399fa 1-13
+package.json
+  s_df00bc047c6515::t_1419030cb4593a 18,22,25
+package-lock.json
+  s_df00bc047c6515::t_b0293d75829e90 11,15,18,34-54,91-99,969-974,1072-1081,1093-1101,1116-1153,1163-1193,1695-1706,1832-1837,2137-2149,3115-3124,3295-3299
+src/bills/rule-matcher.service.ts
+  s_df00bc047c6515::t_dcd2562a7edaef 1-70
+src/approvers/approvers.service.ts
+  h_7607292b2c601e 12,16,20,24
+public/assets/index-CIMy4aHG.js
+  s_df00bc047c6515::t_3954f91db869e5 1-679
+src/bills/bills.controller.ts
+  s_df00bc047c6515::t_dac86300c2c195 28-34
+  s_df00bc047c6515::t_0958010084b7c5 70-73,81,83
+  s_df00bc047c6515::t_5b143054486fe0 1-5,7-12,15,18-19,35-40,43,46-47,49-50,52-55,57-60,62,65-69,120,129,215-247
+  s_df00bc047c6515::t_51d23c45841104 6
+  s_df00bc047c6515::t_625cc2d3cb447b 13,16-17,41,44-45
+  s_df00bc047c6515::t_a531120e4b893c 180-202
+  s_df00bc047c6515::t_2f6ad274891436 14,20-27,42,74-80,82,84-119,123-128,178-179,203-214
+  s_df00bc047c6515::t_20fffcd3a0d8ef 48,51,56,61,63-64,121-122,130-177
+src/bills/cost-center-suggestion.test.ts
+  s_df00bc047c6515::t_df65b0facfbe09 4,6-12,14-26,28,30,37,39-43,49,52-54,60,63-80,92,102,122,135,143-162,165
+  s_df00bc047c6515::t_ac94eccd624531 1-3,5,13,27,29,31-36,38,44-48,50-51,55-59,61-62,81-91,93-101,103-121,123-134,136-142,163-164,166-176
+src/models/approval-rule.model.ts
+  s_df00bc047c6515::t_07a23b75df9b58 4,8,14-21,36,39,50-54,63,65
+  s_df00bc047c6515::t_4f32438addf24c 2
+src/models/bill.model.ts
+  s_df00bc047c6515::t_f26cddf56fc80d 1-13,21-32,38-49,55-64,68-71
+  s_91f253da6c5713::t_2b6484413bcc5a 65-66
+  s_91f253da6c5713::t_af65ae9df66de8 14-20,33-37
+  s_df00bc047c6515::t_866f2bb654cb14 50-54,67
+.gitignore
+  h_7607292b2c601e 149-150
+src/bills/ocr.service.ts
+  s_df00bc047c6515::t_884f1589c90cef 1-66
+src/bills/bills.module.ts
+  s_df00bc047c6515::t_6eae04705e0ef8 6,9-10,14,16-17
+  s_df00bc047c6515::t_0373069e4a89eb 1-5,8,11-13,18-19
+  s_df00bc047c6515::t_f4d0f795d52b2e 7,15
+src/main.ts
+  s_df00bc047c6515::t_331dc7a9276417 25-26
+  s_df00bc047c6515::t_910f06e3020438 7-8,18-24,27-28
+  s_df00bc047c6515::t_15236d7207c948 1,4,6,11-14,17,29
+  s_df00bc047c6515::t_da589a53d6556c 15
+src/database.ts
+  s_91f253da6c5713::t_96c7ec406927c8 115
+  s_df00bc047c6515::t_673f24a5da3ec7 3,5,55,61-67,70-71,127-172
+  s_df00bc047c6515::t_8ad703fbad5f57 84-108
+  s_91f253da6c5713::t_ab351fe96bdb6f 116
+  s_df00bc047c6515::t_b29de7e0ef1a6d 117-126
+src/bills/bills.service.ts
+  s_df00bc047c6515::t_5d58b8a72e9672 12
+  s_df00bc047c6515::t_01e0a2410ddcab 33-35
+  s_df00bc047c6515::t_461ab7a55ce9d4 1-11,13-32,36-39
+src/seed.ts
+  s_df00bc047c6515::t_f28e86764d1dff 1,39,41,47,49,57,59,61-70,76,78,88,90,96,98
+public/icons.svg
+  s_df00bc047c6515::t_a73cf56cc399fa 1-24
+src/app.module.ts
+  s_df00bc047c6515::t_2117c085016e75 6,9
+src/test-setup.ts
+  s_df00bc047c6515::t_0e2e3441bf8f0c 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "82a3988221f42c828fecb96ef3ea7d794b756f3f",
+  "prompts": {},
+  "humans": {
+    "h_7607292b2c601e": {
+      "author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  },
+  "sessions": {
+    "s_91f253da6c5713": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fd86ea1b-bb72-48df-b216-8748381c9ed9",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Ana Turrillo <ana.turrillo@demeter>"
+    },
+    "s_df00bc047c6515": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8e7f811-45a3-4eb1-a176-4822521a15e4",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Ana Turrillo <ana.turrillo@demeter>"
+    }
+  }
+}
