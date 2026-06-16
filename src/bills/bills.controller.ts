@@ -102,12 +102,14 @@ export class BillsController {
         products.map((p) => ({ id: p.id, name: p.name })),
       );
       if (suggestion) {
-        suggestedCostCenterId   = suggestion.costCenterId;
+suggestedCostCenterId   = suggestion.costCenterId;
         suggestedCostCenterName = suggestion.costCenterName;
         suggestionReasoning     = suggestion.reasoning;
         if (suggestion.costCenterId) {
           const ccRules = costCenters.find((cc) => cc.id === suggestion.costCenterId)?.rules ?? [];
-          const rule = this.ruleMatcher.findMatchingRule(ccRules, invoiceData);
+          const rule = suggestion.ruleId
+            ? ccRules.find((r) => r.id === suggestion.ruleId) ?? this.ruleMatcher.findMatchingRule(ccRules, invoiceData)
+            : this.ruleMatcher.findMatchingRule(ccRules, invoiceData);
           if (rule) {
             suggestedRuleId     = rule.id;
             suggestedRuleName   = rule.name;

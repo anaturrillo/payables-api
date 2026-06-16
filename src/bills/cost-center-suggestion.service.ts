@@ -23,6 +23,7 @@ export interface CostCenterContext {
 export interface SuggestionResult {
   costCenterId: string | null;
   costCenterName: string | null;
+  ruleId: string | null;
   reasoning: string;
 }
 
@@ -44,14 +45,14 @@ function describeCondition(cond: RuleCondition, productMap: ProductMap): string 
 }
 
 function describeRule(rule: ApprovalRule, productMap: ProductMap): string {
-  if (rule.conditionGroups.length === 0) return `  Rule "${rule.name}": (no conditions — always applies)`;
+  if (rule.conditionGroups.length === 0) return `  Rule id="${rule.id}" name="${rule.name}": (no conditions — always applies)`;
 
   const groupLines = rule.conditionGroups.map((group) => {
     const condParts = group.conditions.map((c) => describeCondition(c, productMap)).join(` ${group.logic.toUpperCase()} `);
     return `(${condParts})`;
   }).join(` ${rule.groupLogic.toUpperCase()} `);
 
-  return `  Rule "${rule.name}" triggers when: ${groupLines}`;
+  return `  Rule id="${rule.id}" name="${rule.name}" triggers when: ${groupLines}`;
 }
 
 @Injectable()
@@ -98,10 +99,10 @@ INSTRUCTIONS:
 - A cost center matches if the invoice satisfies at least one of its rules.
 - Within a rule, conditions with AND logic must ALL be true; conditions with OR logic require ANY to be true.
 - If multiple cost centers match, prefer the one whose conditions are most specific to this invoice.
-- If no cost center clearly matches, return null for costCenterId.
+- If no cost center clearly matches, return null for costCenterId and ruleId.
 
 Respond with ONLY a valid JSON object — no markdown, no explanation:
-{"costCenterId": "<id or null>", "costCenterName": "<name or null>", "reasoning": "<one sentence>"}`;
+{"costCenterId": "<id or null>", "costCenterName": "<name or null>", "ruleId": "<rule id or null>", "reasoning": "<one sentence>"}`;
 
     try {
       const response = await this.client.messages.create({
@@ -111,8 +112,9 @@ Respond with ONLY a valid JSON object — no markdown, no explanation:
       });
 
       const text = response.content[0].type === "text" ? response.content[0].text.trim() : "";
-      const jsonText = text.startsWith("{") ? text : text.slice(text.indexOf("{"));
-      return JSON.parse(jsonText) as SuggestionResult;
+      const match = text.match(/\{[\s\S]*\}/);
+      if (!match) return null;
+      return JSON.parse(match[0]) as SuggestionResult;
     } catch {
       return null;
     }

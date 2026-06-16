@@ -57,8 +57,9 @@ Rules: amounts are plain numbers (no currency symbols), dates in YYYY-MM-DD form
       });
 
       const text = response.content[0].type === "text" ? response.content[0].text.trim() : "";
-      const jsonText = text.startsWith("{") ? text : text.slice(text.indexOf("{"));
-      return JSON.parse(jsonText) as ExtractedInvoice;
+      const match = text.match(/\{[\s\S]*\}/);
+      if (!match) return null;
+      return JSON.parse(match[0]) as ExtractedInvoice;
     } catch {
       return null;
     }
